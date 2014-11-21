@@ -1,4 +1,4 @@
-var skillController = angular.module('skillController',['ngGrid']);
+var skillController = angular.module('skillController',[]);
     skillController.controller('SkillCtrl',['$scope',
         function ($scope) {
             $scope.myData = [];

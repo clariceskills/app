@@ -1,6 +1,7 @@
 <html ng-app="skillController">
 <link rel="stylesheet" type="text/css" href="../node_modules/ng-grid/ng-grid.css" />
 <link rel="stylesheet" type="text/css" href="css/style.css" />
+<link rel="stylesheet" type="text/css" href="css/tableStyle.css" />
 
 <script src="bower_components/jquery/jquery.js"></script>
 <script src="bower_components/angular/angular.js"></script>
@@ -23,7 +24,17 @@
             </div>
         </div><br/><br/>
         <h3>Listing: </h3>
-        <div class="gridStyle" ng-grid="gridOptions"></div>
+        <table ng-table class="table">
+            <th>NAME</th>
+            <th>CATEGORY</th>
+            <th>ACTION</th>
+
+            <tr ng-repeat="data in myData | orderBy: 'name'">
+                <td>{{data.name}}</td>
+                <td>{{data.category}}</td>
+                <td><button ng-click="remove(data.name)">Remove</button></td>
+            </tr>
+        </table>
     </form>
 </div>
 </html>

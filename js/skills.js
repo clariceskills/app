@@ -10,10 +10,25 @@ var skillController = angular.module('skillController',['ngGrid']);
             $scope.category = '';
             $scope.addSkills = function () {
             $scope.myData.push({
-                    Name: $scope.skill,
-                    Category: $scope.category
+                    name: $scope.skill,
+                    category: $scope.category
                 }
             );
+            $scope.remove = function(name) {
+                var index = -1;
+                var dupArr = eval( $scope.myData);
+                for( var i = 0; i < dupArr.length; i++ ) {
+                    if( dupArr[i].name === name ) {
+                        index = i;
+                        break;
+                    }
+                }
+                if( index === -1 ) {
+                    alert( "Something gone wrong" );
+                }
+                $scope.myData.splice( index, 1 );
+
+            }
             $scope.skill = '';
             $scope.category = '';
         }

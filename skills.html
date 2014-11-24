@@ -13,12 +13,11 @@
                 Name:
                 <input type="text" ng-model="skill" placeholder="Enter skill detail" class="form-control">
                 Category:
-                <select name="category" ng-model="category">
-                    <option value="">-- choose category</option>
+                <select name="category" ng-model="category">                	
                     <option ng-repeat="category in categories" value="{{category.name}}">{{category.name}}</option>
                 </select><br/><br/>
-        <span class="input-group-btn">
-          <input type="submit" class="btn btn-primary" value="Add">
+          <span class="input-group-btn">
+          <input type="submit" class="btn btn-primary" value="{{submitSkill}}"> 
         </span>
             </div>
         </div><br/><br/>
@@ -31,7 +30,7 @@
                 <td>{{data.name}}</td>
                 <td>{{data.category}}</td>
                 <td>
-	                <button edit-skill type="button" class="" ng-click="edit()">Edit</button>
+	                <button edit-skill type="button" class="" ng-click="edit($index)">Edit</button>
 	                <button type="button" ng-click="remove($index)">Remove</button>
                 </td>
             </tr>

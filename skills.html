@@ -1,12 +1,10 @@
 <html ng-app="skillapp">
-
 <link rel="stylesheet" type="text/css" href="css/style.css" />
 <link rel="stylesheet" type="text/css" href="css/tableStyle.css" />
-
 <script src="bower_components/jquery/jquery.js"></script>
 <script src="bower_components/angular/angular.js"></script>
-
 <script src="js/skills.js"></script>
+<!-- <script src="js/directives/editSkills.js"></script> -->
 <div class="container" ng-controller="SkillCtrl">
     <h3>Add employee skill details: </h3>
     <form role="form" ng-submit="addSkills()">
@@ -29,11 +27,13 @@
             <th>NAME</th>
             <th>CATEGORY</th>
             <th>ACTION</th>
-
-            <tr ng-repeat="data in mySkills | orderBy: 'name'">
+            <tr ng-repeat="data in mySkills track by $index | orderBy: 'name'">
                 <td>{{data.name}}</td>
                 <td>{{data.category}}</td>
-                <td><button ng-click="remove(data.name)">Remove</button></td>
+                <td>
+	                <button edit-skill type="button" class="" ng-click="edit()">Edit</button>
+	                <button type="button" ng-click="remove($index)">Remove</button>
+                </td>
             </tr>
         </table>
     </form>

@@ -9,18 +9,16 @@ var skillapp = angular.module('skillapp',[]);
             $scope.gridOptions = { data: 'mySkills' };
             $scope.category = '';
             $scope.addSkills = function () {
-              console.log("add skills");
                 var postobj = new Object();
                 postobj.skill = $scope.skill;
                 postobj.category = $scope.category;
-                url = "http://zend-dpk.rhcloud.com/skills/add";                
-            $scope.mySkills.push({
+                $scope.mySkills.push({
                     name: $scope.skill,
                     category: $scope.category
                 }
             );
-            $scope.remove = function(name) {
-                var index = -1;
+            $scope.remove = function(sindex) {
+                /*var index = -1;
                 var dupArr = eval( $scope.mySkills);
                 for( var i = 0; i < dupArr.length; i++ ) {
                     if( dupArr[i].name === name ) {
@@ -31,9 +29,11 @@ var skillapp = angular.module('skillapp',[]);
                 if( index === -1 ) {
                     alert( "Something gone wrong" );
                 }
-                $scope.mySkills.splice( index, 1 );
+                console.log(sindex+" "+index);*/
+                $scope.mySkills.splice( sindex, 1 );
 
             }
+
             $scope.skill = '';
             $scope.category = '';
         }

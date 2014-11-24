@@ -1,4 +1,4 @@
-<html ng-app="skillController">
+<html ng-app="skillapp">
 
 <link rel="stylesheet" type="text/css" href="css/style.css" />
 <link rel="stylesheet" type="text/css" href="css/tableStyle.css" />
@@ -30,7 +30,7 @@
             <th>CATEGORY</th>
             <th>ACTION</th>
 
-            <tr ng-repeat="data in myData | orderBy: 'name'">
+            <tr ng-repeat="data in mySkills | orderBy: 'name'">
                 <td>{{data.name}}</td>
                 <td>{{data.category}}</td>
                 <td><button ng-click="remove(data.name)">Remove</button></td>

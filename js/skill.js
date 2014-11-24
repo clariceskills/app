@@ -1,1 +1,0 @@
-var skill_cat;

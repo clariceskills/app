@@ -14,6 +14,7 @@
                 <input type="text" ng-model="skill" placeholder="Enter skill detail" class="form-control">
                 Category:
                 <select name="category" ng-model="category">                	
+                    <option value="">--choose category</option>
                     <option ng-repeat="category in categories" value="{{category.name}}">{{category.name}}</option>
                 </select><br/><br/>
           <span class="input-group-btn">
